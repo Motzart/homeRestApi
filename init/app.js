@@ -1,15 +1,15 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const jsonParser = bodyParser.json();
-const config = require('../config');
+const config = require("../config");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(jsonParser);
 
 const router = express.Router();
-app.use('/api', router);
+app.use("/api", router);
 
-require('./routes')(router, config);
+require("./routes")(router, config);
 
 module.exports = app;

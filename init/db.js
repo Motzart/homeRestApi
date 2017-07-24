@@ -1,30 +1,23 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // MLab free database 
+const mLabUrl = "mongodb://weather:JEwoccaHetlodE9@ds141232.mlab.com:41232/home";
 
-const mLabUrl = 'mongodb://weather:JEwoccaHetlodE9@ds141232.mlab.com:41232/home';
-
-mongoose.connect(mLabUrl, {useMongoClient: true});
-
-
+mongoose.connect(mLabUrl, { useMongoClient: true });
 mongoose.Promise = Promise;
 
 const db = mongoose.connection;
 
-Array.prototype.includesId = function(objectId) {
-	return this.some(id => id.equals(objectId));
-};
-
 const dbPromise = new Promise((res, rej) => {
-	db.on('error', (e) => rej(e));
-	db.once('openUri',() => res());
+  db.on("error", (e) => rej(e));
+  db.once("openUri", () => res());
 });
 
 
 dbPromise.then(() => {
-	console.log('db connected');
+  console.log("db connected");
 })
-.catch((e) => {
-  console.log('error', e);
-  process.exit(1);
-});
+  .catch((e) => {
+    console.log("error", e);
+    process.exit(1);
+  });
