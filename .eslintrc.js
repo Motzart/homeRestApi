@@ -2,9 +2,9 @@ module.exports = {
     "extends": "eslint:recommended",
     "rules": {
         // enable additional rules
-        "indent": ["error", 2],
+        "indent": ["error", 4],
         "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "double"],
+        "quotes": ["error", "single"],
         "semi": ["error", "always"],
 
         // override default options for rules from base configurations
