@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "co": "^4.6.0",
     "dotenv": "^4.0.0",
     "es6-promisify": "^5.0.0",
     "express": "^4.15.3",
@@ -19,6 +20,7 @@
     "lodash": "^4.17.4",
     "mongoose": "^4.11.1",
     "mongoose-timestamp": "^0.6.0",
+    "rf-nrf24": "^0.8.5",
     "winston": "^2.3.1"
   },
   "devDependencies": {
