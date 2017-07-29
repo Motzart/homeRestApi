@@ -3,10 +3,6 @@ const config = require('../config');
 const logger = require('winston');
 const promisify = require('es6-promisify');
 
-const test = require('../worker/radio');
-
-console.log('worker-->>', test);
-
 const serverListen = promisify(app.listen, app);
 
 serverListen(config.server.port)
@@ -15,4 +11,3 @@ serverListen(config.server.port)
         logger.error('Error happend during server start', err);
         process.exit(1);
     });
-
